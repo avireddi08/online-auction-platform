@@ -1,0 +1,167 @@
+/* === Root styles: Global settings === */
+:root {
+  --primary-color: #1abc9c;
+  --background-dark: #0f2027;
+  --background-light: #ffffff;
+  --text-dark: rgba(255, 255, 255, 0.87);
+  --text-light: #213547;
+  --hover-color: #16a085;
+  --button-bg-dark: #1a1a1a;
+  --button-bg-light: #f9f9f9;
+
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: light dark;
+  color: var(--text-dark);
+  background-color: var(--background-dark);
+}
+
+/* === Light mode settings === */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--text-light);
+    background-color: var(--background-light);
+  }
+}
+
+/* === Base font size === */
+html {
+  font-size: 16px;
+}
+
+/* === Body layout reset === */
+body {
+  margin: 0;
+  min-width: 250px;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* === Optional page layout wrapper === */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Headings === */
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* === Links === */
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* === Buttons === */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+/* === Dark Mode Buttons === */
+@media (prefers-color-scheme: dark) {
+  button {
+    background-color: var(--button-bg-dark);
+    color: white;
+  }
+
+  button:hover {
+    border-color: var(--hover-color);
+    background-color: #333;
+  }
+}
+
+/* === Light Mode Buttons === */
+@media (prefers-color-scheme: light) {
+  button {
+    background-color: var(--button-bg-light);
+    color: black;
+  }
+
+  button:hover {
+    border-color: var(--primary-color);
+    background-color: #e0e0e0;
+  }
+}
+
+/* === Inputs and Form Elements === */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* === Form Layout === */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Utility Spacing Classes === */
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* === Responsive Design === */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
