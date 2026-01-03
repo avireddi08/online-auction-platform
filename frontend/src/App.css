@@ -1,8 +1,8 @@
 /* ========== ROOT & GLOBAL ========== */
 :root {
-  --primary: #1abc9c;
-  --primary-dark: #16a085;
-  --secondary: #ff6b6b;
+  --primary: #1fc765;
+  --primary-dark: #1fc765;
+  --secondary: #1fc765;
   --success: #27ae60;
   --danger: #e74c3c;
   --warning: #f39c12;
@@ -368,7 +368,7 @@ body {
 }
 
 .app.dark-mode .auth-card {
-  background: #2d3748;
+  background: #242e3e;
   border-color: #4a5568;
 }
 
