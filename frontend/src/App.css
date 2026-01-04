@@ -1,6 +1,6 @@
 /* ========== ROOT & GLOBAL ========== */
 :root {
-  --primary: #1fc765;
+  --primary: #3498db;
   --primary-dark: #1fc765;
   --secondary: #1fc765;
   --success: #27ae60;
@@ -9,9 +9,9 @@
   --light: #ecf0f1;
   --light-gray: #f5f6fa;
   --border: #bdc3c7;
-  --text-dark: #2c3e50;
-  --text-light: #7f8c8d;
-  --text-lighter: #95a5a6;
+  --text-dark: #182028;
+  --text-light: #96a9ac;
+  --text-lighter: #708386;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -41,12 +41,12 @@ body {
 }
 
 .app.dark-mode {
-  background: #1a202c;
+  background: #181d26;
   color: #e2e8f0;
 }
 
 .app.dark-mode body {
-  background: #1a202c;
+  background: #181d26;
   color: #e2e8f0;
 }
 
@@ -170,7 +170,7 @@ body {
 }
 
 .app.dark-mode .sidebar {
-  background: #2d3748;
+  background: #181d26;
   color: #e2e8f0;
 }
 
@@ -231,7 +231,7 @@ body {
 }
 
 .app.dark-mode .landing-container {
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  background: linear-gradient(135deg, #1a202c 100%);
 }
 
 .landing-content {
@@ -403,7 +403,7 @@ body {
 }
 
 .app.dark-mode .auth-error {
-  background: rgba(197, 48, 48, 0.1);
+  background: rgba(239, 52, 52, 0.1);
 }
 
 .auth-form {
@@ -526,10 +526,6 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
-}
-
-.auth-links .link:hover {
-  color: var(--primary-dark);
 }
 
 .link-item {
@@ -1210,14 +1206,14 @@ body {
 
 /* ========== FOOTER ========== */
 .footer {
-  background: linear-gradient(135deg, var(--text-dark) 0%, #1a202c 100%);
+  background: linear-gradient(135deg, var(--text-dark) 0%, #45474b 100%);
   color: white;
   margin-top: auto;
   padding: 60px 20px 30px;
 }
 
 .app.dark-mode .footer {
-  background: linear-gradient(135deg, #1a202c 0%, #0f1419 100%);
+  background: linear-gradient(135deg, #242832 100%);
 }
 
 .footer-content {
@@ -1672,7 +1668,6 @@ body {
 }
 
 .view-btn:hover {
-  background: var(--primary-dark);
   transform: translateY(-1px);
 }
 
