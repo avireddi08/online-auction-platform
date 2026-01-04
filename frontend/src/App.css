@@ -1434,7 +1434,7 @@ body {
 
 .btn-submit:hover:not(:disabled) {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(26, 188, 156, 0.3);
+  box-shadow: 0 10px 30px;
 }
 
 .btn-submit:disabled {
@@ -1520,7 +1520,7 @@ body {
 
 .my-auction-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(26, 188, 156, 0.15);
+  box-shadow: 0 15px 40px;
   border-color: var(--primary);
 }
 
@@ -1775,7 +1775,7 @@ body {
   color: var(--primary);
   border: 2px solid var(--primary);
   border-radius: 8px;
-  cursor: pointer;
+  text-decoration: none;
   font-weight: 600;
   transition: all 0.3s;
 }
@@ -1787,6 +1787,7 @@ body {
 }
 
 .btn-back:hover {
+  text-decoration: none;
   background: var(--primary);
   color: white;
   transform: translateY(-2px);
@@ -2007,7 +2008,7 @@ body {
 
 .btn-bid:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(26, 188, 156, 0.3);
+  box-shadow: 0 10px 30px;
 }
 
 .error-message {
