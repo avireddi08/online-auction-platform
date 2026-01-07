@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Camera, Edit3, Mail, Phone, MapPin } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import axios from "axios";
 
 const Profile = () => {
@@ -42,6 +43,10 @@ const Profile = () => {
 
   return (
     <div className="dashboard-container">
+      <Link to="/dashboard" className="btn-back" style={{ margin: '20px', display: 'inline-block' }}>
+        <FaArrowLeft /> Back to Dashboard
+      </Link>
+
       {/* ✅ Navbar */}
       <header className="navbar">
         <div>

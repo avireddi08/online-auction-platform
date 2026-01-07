@@ -913,6 +913,7 @@ body {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .app.dark-mode .card-price-section {
@@ -1018,8 +1019,8 @@ body {
 .seller {
   font-weight: 600;
   color: var(--primary);
-  font-size: 13px;
 }
+  
 
 .bids {
   background: var(--light-gray);
@@ -1129,6 +1130,7 @@ body {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  color: white;
 }
 
 /* ========== CAROUSEL ========== */
@@ -1434,7 +1436,7 @@ body {
 
 .btn-submit:hover:not(:disabled) {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px;
+  box-shadow: 0 15px 40px rgba(70, 103, 251, 0.4);
 }
 
 .btn-submit:disabled {
@@ -1520,7 +1522,6 @@ body {
 
 .my-auction-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px;
   border-color: var(--primary);
 }
 
@@ -1669,6 +1670,7 @@ body {
 
 .view-btn:hover {
   transform: translateY(-1px);
+  color: white;
 }
 
 .edit-btn {
@@ -1679,6 +1681,7 @@ body {
 .edit-btn:hover {
   background: #e67e22;
   transform: translateY(-1px);
+  color: white;
 }
 
 .delete-btn {
@@ -1689,6 +1692,7 @@ body {
 .delete-btn:hover {
   background: #c0392b;
   transform: translateY(-1px);
+  color: white;
 }
 
 /* ========== AUCTION ITEM PAGE ========== */
@@ -1782,15 +1786,14 @@ body {
 
 .app.dark-mode .btn-back {
   background: #2d3748;
-  border-color: var(--primary);
   color: var(--primary);
 }
 
 .btn-back:hover {
   text-decoration: none;
-  background: var(--primary);
-  color: white;
-  transform: translateY(-2px);
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
 }
 
 .auction-detail-wrapper {
@@ -2008,7 +2011,7 @@ body {
 
 .btn-bid:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
 }
 
 .error-message {

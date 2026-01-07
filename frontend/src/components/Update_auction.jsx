@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
+import { FaArrowLeft } from "react-icons/fa";
 import "react-datepicker/dist/react-datepicker.css";
 
 function UpdateAuction() {
@@ -89,44 +90,89 @@ function UpdateAuction() {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p className="error">{error}</p>;
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading auction details...</p>
+      </div>
+    );
+  }
+
+  if (error && !isOwner) {
+    return (
+      <div className="post-auction-page">
+        <div className="form-container">
+          <div className="error-box">
+            <p>❌ {error}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="form-container">
-      <h2>Update Auction</h2>
-      {message && <p className="success">{message}</p>}
+    <div className="post-auction-page">
+      <div className="form-container">
+         <Link to="/my-auctions" className="btn-back">
+          <FaArrowLeft /> Back to My Auctions
+        </Link>
+        <div className="form-header">
+          <h2>Edit Auction</h2>
+          <p className="form-subtitle">Update your auction details</p>
+        </div>
 
-      {isOwner && auction && (
-        <form onSubmit={(e) => { e.preventDefault(); handleUpdate(); }}>
-          <label>Starting Bid ($):</label>
-          <input
-            type="number"
-            value={updateData.startingBid}
-            onChange={(e) =>
-              setUpdateData({ ...updateData, startingBid: e.target.value })
-            }
-            min={auction.startingBid}
-            required
-          />
-
-          <label>Closing Time:</label>
-          <DatePicker
-            selected={updateData.closingTime}
-            onChange={(date) => setUpdateData({ ...updateData, closingTime: date })}
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            dateFormat="yyyy-MM-dd HH:mm"
-            className="custom-datepicker-input"
-            minDate={new Date()}
-          />
-
-          <div style={{ textAlign: "right", marginTop: "10px" }}>
-            <button type="submit">Update Auction</button>
+        {message && (
+          <div className="form-message success">
+            {message}
           </div>
-        </form>
-      )}
+        )}
+
+        {error && (
+          <div className="form-message error">
+            {error}
+          </div>
+        )}
+
+        {isOwner && auction && (
+          <form onSubmit={(e) => { e.preventDefault(); handleUpdate(); }} className="auction-form">
+            <div className="form-group">
+              <label htmlFor="startingBid">Starting Bid (₹) *</label>
+              <input
+                id="startingBid"
+                type="number"
+                placeholder="Enter starting bid"
+                value={updateData.startingBid}
+                onChange={(e) =>
+                  setUpdateData({ ...updateData, startingBid: e.target.value })
+                }
+                min={auction.startingBid}
+                required
+                className="form-input"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="closingTime">Auction Ends *</label>
+              <DatePicker
+                selected={updateData.closingTime}
+                onChange={(date) => setUpdateData({ ...updateData, closingTime: date })}
+                showTimeSelect
+                timeFormat="HH:mm"
+                timeIntervals={15}
+                dateFormat="yyyy-MM-dd HH:mm"
+                placeholderText="Select date & time"
+                className="form-input"
+                minDate={new Date()}
+              />
+            </div>
+
+            <button type="submit" className="btn-submit">
+              Update Auction
+            </button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }

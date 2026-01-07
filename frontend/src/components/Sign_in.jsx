@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaEnvelope, FaLock } from "react-icons/fa";
 
-function Signin() {
+function Signin({ onLoginSuccess }) {
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -32,7 +32,13 @@ function Signin() {
         localStorage.setItem('username', res.data.username);
         localStorage.setItem('email', res.data.email);
         console.log('Signin Response:', res.data);
-        navigate('/dashboard', { replace: true });
+        
+        // Call the onLoginSuccess callback to update App state
+        if (onLoginSuccess) {
+          onLoginSuccess(res.data.token, res.data.username);
+        } else {
+          navigate('/dashboard', { replace: true });
+        }
       } else {
         setError('Invalid credentials.');
       }

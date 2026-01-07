@@ -88,8 +88,6 @@ function MyAuctions() {
                                     </div>
 
                                     <div className="card-body">
-                                        <p className="card-category">{auction.category || "General"}</p>
-
                                         <div className="card-price-section">
                                             <div className="price-info">
                                                 <span className="label">Starting Bid</span>
@@ -107,12 +105,6 @@ function MyAuctions() {
                                             {auction.description?.substring(0, 80)}
                                             {auction.description?.length > 80 ? "..." : ""}
                                         </p>
-
-                                        <div className="card-footer">
-                                            <span className="bids">
-                                                {auction.bids?.length || 0} {auction.bids?.length === 1 ? "Bid" : "Bids"}
-                                            </span>
-                                        </div>
                                     </div>
 
                                     <div className="card-actions">

@@ -136,14 +136,12 @@ function Dashboard() {
                 </div>
 
                 <div className="card-body">
-                  <p className="card-category">{auction.category || "General"}</p>
-
                   <div className="card-price-section">
                     <div className="price-info">
                       <span className="label">Starting Bid</span>
                       <span className="price">₹{auction.startingBid}</span>
                     </div>
-                    {auction.highestBid > 0 && (
+                    {auction.highestBid && auction.highestBid > 0 && (
                       <div className="price-info">
                         <span className="label">Current Bid</span>
                         <span className="price highlight">
@@ -181,7 +179,6 @@ function Dashboard() {
                   </p>
 
                   <div className="card-footer">
-                    <span className="seller">By: {auction.sellerName || "Unknown"}</span>
                     <span className="bids">
                       {auction.bids?.length || 0} {auction.bids?.length === 1 ? "Bid" : "Bids"}
                     </span>
@@ -194,9 +191,6 @@ function Dashboard() {
           <div className="empty-state">
             <FaGavel className="empty-icon" />
             <p>No auctions found</p>
-            <Link to="/post" className="btn-primary">
-              Create First Auction
-            </Link>
           </div>
         )}
       </div>

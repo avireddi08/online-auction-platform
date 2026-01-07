@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 function PostAuction() {
   const [itemName, setItemName] = useState('');
@@ -70,6 +71,10 @@ function PostAuction() {
   return (
     <div className="post-auction-page">
       <div className="form-container">
+        <Link to="/dashboard" className="btn-back">
+          <FaArrowLeft /> Back to Dashboard
+        </Link>
+
         <div className="form-header">
           <h2>Post New Auction</h2>
           <p className="form-subtitle">List your item and start receiving bids</p>

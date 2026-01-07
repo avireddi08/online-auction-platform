@@ -90,7 +90,7 @@ router.get("/auctions", async (req, res) => {
     const auctions = await Auction.find()
       .populate("highestBidder", "username")
       .populate("bids.user", "username")
-      .select("itemName description highestBid highestBidder closingTime isClosed bids");
+      .select("itemName description startingBid highestBid highestBidder closingTime isClosed bids");
 
     res.json(auctions);
   } catch (error) {

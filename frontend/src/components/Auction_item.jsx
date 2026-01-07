@@ -147,10 +147,11 @@ function AuctionItem() {
                 <p>{selectedAuction.description}</p>
               </div>
 
-              <div className="auction-details-grid">
+              <div className="detail-cards-grid">
+
                 <div className="detail-card">
                   <div className="detail-label">Starting Bid</div>
-                  <div className="detail-value">₹{selectedAuction.startingBid}</div>
+                  <div className="detail-value highlight">₹{selectedAuction.startingBid}</div>
                 </div>
 
                 <div className="detail-card">
@@ -198,6 +199,7 @@ function AuctionItem() {
                       : "N/A"}
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -239,7 +241,6 @@ function AuctionItem() {
                       ? `Winner: ${selectedAuction.highestBidder?.username || selectedAuction.highestBidder} with ₹${selectedAuction.highestBid}`
                       : "No bids were placed on this item."}
                   </p>
-                  <Link to="/dashboard" className="btn-primary">Back to Auctions</Link>
                 </div>
               </div>
             )}
