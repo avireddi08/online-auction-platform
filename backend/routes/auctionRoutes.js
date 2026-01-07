@@ -221,7 +221,7 @@ router.get("/my-auctions", authMiddleware, async (req, res) => {
     const myAuctions = await Auction.find({ createdBy: userId })
       .populate("highestBidder", "username")
       .populate("bids.user", "username")
-      .select("itemName description startingBid highestBid highestBidder closingTime isClosed bids createdBy category");
+      .select("itemName description startingBid highestBid highestBidder closingTime isClosed bids createdBy");
 
     res.json(myAuctions);
   } catch (err) {

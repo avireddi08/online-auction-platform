@@ -13,6 +13,7 @@ import Profile from "./components/Profile.jsx";
 
 import { ToastContainer, toast } from "react-toastify";
 import ForgotPassword from "./components/ForgotPassword.jsx";
+import ResetPassword from "./components/ResetPassword.jsx";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -163,6 +164,7 @@ function App() {
           <Route path="/auction/delete/:id" element={isAuthenticated ? <DeleteAuction /> : <Signin onLoginSuccess={handleLoginSuccess} />} />
           <Route path="/my-auctions" element={isAuthenticated ? <MyAuctions /> : <Signin onLoginSuccess={handleLoginSuccess} />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
 

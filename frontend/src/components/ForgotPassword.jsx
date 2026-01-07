@@ -21,7 +21,7 @@ function ForgotPassword() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5001/auth/forgot-password", { email });
+      const res = await axios.post("http://localhost:5001/forgot-password/forgot-password", { email });
 
       setMessage(res.data.message || "Password reset link sent to your email.");
     } catch (err) {

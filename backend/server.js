@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import authRoutes from "./routes/authRoutes.js"; // Import routes after app
 import auctionRoutes from './routes/auctionRoutes.js';
+import forgotPassRoutes from "./routes/forgot-pass.js";
+import resetPassRoutes from "./routes/reset-pass.js";
 import Auction from './models/Auction.js';
 
 dotenv.config(); // Load environment variables
@@ -18,6 +20,8 @@ app.use(cors());
 // Routes (After declaring app)
 app.use("/auth", authRoutes);
 app.use('/auction', auctionRoutes);
+app.use('/forgot-password', forgotPassRoutes);
+app.use('/reset-password', resetPassRoutes);
 
 
 // Connect to MongoDB
